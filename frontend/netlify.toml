@@ -1,6 +1,6 @@
 [build]
-  publish = "dist"       # Thư mục chứa code sau khi build của Vite
-  command = "pnpm build" # Lệnh build
+  publish = "dist"
+  command = "pnpm build"
 
 [[redirects]]
   from = "/*"
