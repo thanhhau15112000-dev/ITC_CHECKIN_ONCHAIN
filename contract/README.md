@@ -18,7 +18,7 @@ The contract stores and manages:
 - attendance records
 - a lookup from `session_code` to `session_id`
 
-The goal is to match a normal classroom attendance workflow:
+The intended workflow is:
 
 1. Admin authorizes a teacher
 2. Teacher creates a class
@@ -84,8 +84,6 @@ Stores:
 
 ## Attendance Status
 
-The contract uses three status values:
-
 - `0` = `Absent`
 - `1` = `OnTime`
 - `2` = `Late`
@@ -114,7 +112,7 @@ Student self check-in currently records status `OnTime` by default.
 - `teacher_check_in(registry, class_id, session_id, student_code, status, checked_in_at, ctx)`
 - `student_check_in_by_code(registry, session_code, student_code, full_name, checked_in_at, ctx)`
 
-## Read / Helper Functions
+## Helper Functions
 
 - `has_attendance(...)`
 - `has_attendance_by_code(...)`
@@ -124,13 +122,13 @@ Student self check-in currently records status `OnTime` by default.
 - `get_session_id_by_code(...)`
 - `is_valid_status(...)`
 
-Use the source file for the exact signatures.
+Use the source file for exact signatures.
 
 ## Access Rules
 
 - Only the admin can register teachers
 - Only a registered teacher or the admin can create a class
-- Only the class owner or the admin can open/close sessions
+- Only the class owner or the admin can open or close sessions
 - Only the class owner or the admin can perform teacher check-in
 - Student self check-in only works when:
   - the session code exists
@@ -169,7 +167,7 @@ sui move build
 
 The current published testnet package is tracked in `Published.toml`.
 
-At the time of writing:
+Current value:
 
 - network: `testnet`
 - published package: `0xdd89da229ae6906fd513cc212c0fda266c8736298a6c5fb2251836257ed43191`
@@ -182,10 +180,4 @@ The frontend uses friendlier labels for technical blockchain fields:
 - `Registry ID` -> shared attendance registry object
 - `AdminCap ID` -> admin capability object
 
-If you publish a new version of the contract, update the frontend configuration with the new values.
-
-## Notes
-
-- This contract is designed around class/session attendance, not wallet-only attendance
-- Student self check-in depends on a matching `student_code` and `full_name`
-- Session codes must be unique
+If you publish a new contract version, update the frontend configuration with the new values.
