@@ -28,27 +28,27 @@ export default function App() {
 		<DAppKitProvider dAppKit={dAppKit}>
 			<div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(22,163,74,0.18),_transparent_30%),radial-gradient(circle_at_top_right,_rgba(249,115,22,0.12),_transparent_24%),linear-gradient(180deg,_#fffdf7_0%,_#f8fafc_45%,_#eefbf4_100%)]">
 				<div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-6 md:px-6 md:py-10">
-					<header className="flex flex-col gap-4 rounded-[28px] border border-white/70 bg-white/85 p-5 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur md:flex-row md:items-center md:justify-between">
-						<div className="space-y-3">
-							<div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold tracking-[0.2em] text-emerald-700 uppercase">
-								<Sparkles className="size-3.5" />
-								Điểm danh onchain
-							</div>
-							<div>
-								<h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-									ITC Check-in
-								</h1>
-								<p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 md:text-base">
-									Giao diện điểm danh dành cho giảng viên và sinh viên. Phần kỹ thuật blockchain được giữ
-									ở phía sau, còn trên màn hình chỉ hiển thị các bước dễ hiểu và gần với quy trình lớp
-									học.
-								</p>
-							</div>
-						</div>
-						<div className="shrink-0">
-							<ConnectButton />
-						</div>
-					</header>
+				<header className="relative z-[50] flex flex-col gap-4 rounded-[28px] border border-white/70 bg-white/85 p-5 shadow-[0_20px_80px_rgba(15,23,42,0.08)] backdrop-blur md:flex-row md:items-center md:justify-between">
+    <div className="space-y-3">
+        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold tracking-[0.2em] text-emerald-700 uppercase">
+            <Sparkles className="size-3.5" />
+            Điểm danh onchain
+        </div>
+        <div>
+            <h1 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+                ITC Check-in
+            </h1>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 md:text-base">
+                Giao diện điểm danh dành cho giảng viên và sinh viên. Phần kỹ thuật blockchain được giữ
+                ở phía sau, còn trên màn hình chỉ hiển thị các bước dễ hiểu và gần với quy trình lớp
+                học.
+            </p>
+        </div>
+    </div>
+    <div className="relative z-[100] shrink-0">
+        <ConnectButton />
+    </div>
+</header>
 
 					<WalletStatus />
 					<Dashboard />
